@@ -47,7 +47,7 @@ app.listen(PORT, () => {
 });
 app.get('/test', async (req, res) => {
   const { data, error } = await supabase
-    .from('score')
+    .from('scores')
     .select('*')
 
   res.json({ data, error })
