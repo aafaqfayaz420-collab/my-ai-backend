@@ -1,3 +1,4 @@
+import supabase from './supabase.js'
 import express from "express";
 import fetch from "node-fetch";
 
@@ -44,3 +45,11 @@ const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
+app.get('/test', async (req, res) => {
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+
+  res.json({ data, error })
+})
+
