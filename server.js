@@ -1,6 +1,13 @@
 import supabase from './supabase.js'
 import express from "express";
 import fetch from "node-fetch";
+import cors from "cors";
+
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 const app = express();
 app.use(express.json());
