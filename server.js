@@ -3,15 +3,14 @@ import fetch from "node-fetch";
 import cors from "cors";
 import supabase from "./supabase.js";
 
+const app = express();
+app.use(express.json());
 
 app.use(cors({
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
-
-const app = express();
-app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Groq backend running ✅");
