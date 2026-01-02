@@ -1,7 +1,8 @@
-import supabase from './supabase.js'
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+import supabase from "./supabase.js";
+
 
 app.use(cors({
   origin: "*",
